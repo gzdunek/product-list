@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
-import {Products} from './Products';
 import {Header} from './Header';
 import {Filters} from './Filters';
+
+import './App.scss';
+import {FilteredProducts} from '../containers/FilteredProducts';
 
 class App extends Component {
   render() {
     return (
-        <div>
+        <div className="container">
             <Header/>
             <Filters/>
-            <Products/>
+            <FilteredProducts/>
       </div>
     );
   }
