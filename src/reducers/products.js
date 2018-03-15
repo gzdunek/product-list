@@ -1,7 +1,5 @@
 const products = (state = [], action) => {
     switch (action.type) {
-        case 'SET_FILTER':
-            return state;
         default:
             return state;
     }
@@ -10,21 +8,28 @@ const products = (state = [], action) => {
 export default products;
 
 export const getFilteredProducts = (products, filters) => {
-    if (!filters.length) {
+    if (Object.keys(filters).length === 0) {
         return products;
     }
 
     let filteredProducts = [...products];
 
-    filters.forEach(filter => {
-        if (!filter.parameter || !filter.values.length) {
-            return;
+    for (const filter in filters) {
+        if (!filters[filter].length) {
+            continue;
         }
 
         filteredProducts = filteredProducts.filter(product => {
-            return filter.values.indexOf(product[filter.parameter]) >= 0;
+            if (product[filter] instanceof Array) {
+                for (const productSingleParam in product[filter]) {
+                    if (filters[filter].indexOf(product[filter][productSingleParam]) >= 0)
+                        return true;
+                }
+            }
+
+            return filters[filter].indexOf(product[filter]) >= 0;
         });
-    });
+    }
 
     return filteredProducts;
 };

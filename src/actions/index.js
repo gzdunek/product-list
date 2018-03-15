@@ -1,5 +1,5 @@
-export const setFilter = (filterName, filterValues) => ({
-    type: 'SET_PRODUCT_FILTER',
-    filterName: parameter,
-    filterValues: values,
+export const changeFilterVisibility = (filterName, isOpen) => ({
+    type: 'CHANGE_FILTER_VISIBILITY',
+    filterName,
+    isOpen
 });

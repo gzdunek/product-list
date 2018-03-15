@@ -1,11 +1,12 @@
-import {combineReducers} from 'redux';
 import products, * as fromProducts from './products';
+import filters from './filters';
 
-const filteredProducts = combineReducers({
-    products
-});
+const filteredProducts = {
+    products,
+    filters
+};
 
 export default filteredProducts;
 
-export const getFilteredProducts = (state, filterName, filterValue) =>
-    fromProducts.getFilteredProducts(state.products, filterName, filterValue);
+export const getFilteredProducts = (state, filters) =>
+    fromProducts.getFilteredProducts(state.products, filters);

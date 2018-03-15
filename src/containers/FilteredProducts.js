@@ -1,18 +1,16 @@
 import {connect} from 'react-redux';
 import Products from '../components/ProductsList';
 import {getFilteredProducts} from '../reducers';
+import {withRouter} from 'react-router';
 
-const mapStateToProps = (state) => {
-    const filter = [
-        {
-            parameter: 'categories',
-            values: []
-        }
-    ];
+import qs from 'query-string';
+
+const mapStateToProps = (state, ownParams) => {
+    const parsedFilters = qs.parse(ownParams.location.search, {arrayFormat: 'bracket'});
 
     return {
-        products: getFilteredProducts(state, filter),
+        products: getFilteredProducts(state, parsedFilters || {}),
     };
 };
 
-export const FilteredProducts = connect(mapStateToProps, {})(Products);
+export default withRouter(connect(mapStateToProps, {})(Products));
