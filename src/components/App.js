@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Header} from './Header';
-import Filters from '../containers/Filters';
+import Header from './Header';
+import Filters from '../containers/FiltersList';
 
 import './App.scss';
 import FilteredProducts from '../containers/FilteredProducts';

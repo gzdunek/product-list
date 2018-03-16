@@ -1,5 +1,10 @@
 const products = (state = [], action) => {
     switch (action.type) {
+        case 'CHANGE_PRODUCT_VARIANT':
+            const newState = [...state];
+            const index = newState.findIndex(product => product.id === action.productId);
+            newState[index].displayedVariantId = action.variantId;
+            return newState;
         default:
             return state;
     }

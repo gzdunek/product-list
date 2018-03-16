@@ -4,6 +4,7 @@ import {getFilteredProducts} from '../reducers';
 import {withRouter} from 'react-router';
 
 import qs from 'query-string';
+import {changeProductVariant} from '../actions';
 
 const mapStateToProps = (state, ownParams) => {
     const parsedFilters = qs.parse(ownParams.location.search, {arrayFormat: 'bracket'});
@@ -13,4 +14,4 @@ const mapStateToProps = (state, ownParams) => {
     };
 };
 
-export default withRouter(connect(mapStateToProps, {})(Products));
+export default withRouter(connect(mapStateToProps, {onProductVariantClick: changeProductVariant})(Products));

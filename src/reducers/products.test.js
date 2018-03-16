@@ -1,4 +1,5 @@
-import {getFilteredProducts} from './products';
+import products, {getFilteredProducts} from './products';
+import {changeProductVariant} from '../actions';
 
 const allProducts = [
     {
@@ -7,7 +8,23 @@ const allProducts = [
         colors: ['red', 'blue'],
         categories: 'bags',
         description: 'Zwykła torba',
-        variants: []
+        displayedVariantId: 1,
+        variants: [
+            {
+                id: 1,
+                color: 'red',
+                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/000/955/plp/Bebop-Weekender-Front-PDP-v2.png?1498578054',
+                price: '115 PLN',
+                inStock: true
+            },
+            {
+                id: 2,
+                color: 'blue',
+                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/000/957/plp/Jetty-Weekender-Front-PDP-v2.png?1498578100',
+                price: '125 PLN',
+                inStock: true
+            }
+        ]
     },
     {
         id: 2,
@@ -15,7 +32,17 @@ const allProducts = [
         colors: ['red'],
         categories: 'backpack',
         description: 'Zwykły plecak',
-        variants: []
+        displayedVariantId: 2,
+        variants: [
+            {
+                id: 3,
+                color: 'blue',
+                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/001/468/plp/Domino-Aviator-PLP2.png?1506357649',
+                price: '250 PLN',
+                inStock: true
+            },
+
+        ]
     }
 ];
 
@@ -60,11 +87,29 @@ describe('Products selector', () => {
 
     it('should return one element (combined filter, multivalue parameter filtered', () => {
         const filters = {
-            // categories: ['bags', 'backpack'],
+            categories: ['bags', 'backpack'],
             colors: ['blue'],
         };
 
         expect(getFilteredProducts(allProducts, filters)).toEqual([allProducts[0]]);
 
-    })
+    });
+});
+
+describe('Products reducer', () => {
+    it('should return initial state, empty', () => {
+        expect(products(undefined, {})).toEqual([]);
+    });
+
+    it('should handle CHANGE_PRODUCT_VARIANT', () => {
+        expect(products(allProducts, changeProductVariant(1, 2))).toEqual(
+            [
+                {
+                    ...allProducts[0],
+                    displayedVariantId: 2,
+                },
+                allProducts[1],
+            ]
+        );
+    });
 });

@@ -45,4 +45,17 @@
     background: orange;
     color: black;
   }
+
+  &__variants__list {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+  }
+
+  &__variant {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+  }
 }

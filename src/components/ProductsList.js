@@ -1,13 +1,15 @@
 import React from 'react';
-import Product from './Product';
 import PropTypes from 'prop-types';
 
 import './ProductsList.scss';
+import Product, {ProductPropTypes} from './Product';
 
-const Products = ({products}) => {
+const Products = ({products, onProductVariantClick}) => {
     return (
         <div className="products">
-            {products.map(product => (<Product key={product.id} {...product}/>))}
+            {products.map(product => (
+                <Product key={product.id} {...product} onProductVariantClick={onProductVariantClick}/>
+            ))}
         </div>
     );
 };
@@ -16,13 +18,7 @@ export default Products;
 
 Products.propTypes = {
     products: PropTypes.arrayOf(PropTypes.shape({
-        productName: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        variants: PropTypes.arrayOf(PropTypes.shape({
-            color: PropTypes.string.isRequired,
-            imageUrl: PropTypes.string.isRequired,
-            price: PropTypes.string.isRequired,
-            inStock: PropTypes.bool.isRequired,
-        })).isRequired,
-    })).isRequired
+        ...ProductPropTypes
+    })).isRequired,
+    onProductVariantClick: PropTypes.func.isRequired,
 };

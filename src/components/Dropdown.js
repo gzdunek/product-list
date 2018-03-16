@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
-import {DropdownOption} from './DropdownOption';
+import DropdownOption from './DropdownOption';
+import PropTypes from 'prop-types';
 
 import './Dropdown.scss';
 
-export class Dropdown extends Component {
+class Dropdown extends Component {
 
     toggleOptionsVisibility = () => {
-        this.setState((prevState => ({isOpen: !prevState.isOpen})),
+        this.setState(
+            (prevState => ({isOpen: !prevState.isOpen})),
             () => this.props.onChangeOptionsVisibility(this.props.name, this.state.isOpen));
     };
     onOptionClick = (optionName, isChecked) => {
-        this.setState((prevState => {
+        this.setState(
+            (prevState => {
                 if (isChecked) {
                     return ({
                         selectedOptions: [...prevState.selectedOptions, optionName]
@@ -49,7 +52,7 @@ export class Dropdown extends Component {
                         <DropdownOption
                             key={option.name}
                             option={option}
-                            checked={this.state.selectedOptions.indexOf(option.name) >= 0}
+                            isChecked={this.state.selectedOptions.indexOf(option.name) >= 0}
                             onOptionClick={(isChecked) => this.onOptionClick(option.name, isChecked)}
                         />
                     )}
@@ -58,3 +61,15 @@ export class Dropdown extends Component {
         );
     };
 }
+
+export default Dropdown;
+
+Dropdown.propTypes = {
+    displayedName: PropTypes.string.isRequired,
+    options: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+    })).isRequired,
+    selectedOptions: PropTypes.array,
+    onChangeOptionsVisibility: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+};

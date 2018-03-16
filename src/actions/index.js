@@ -3,3 +3,9 @@ export const changeFilterVisibility = (filterName, isOpen) => ({
     filterName,
     isOpen
 });
+
+export const changeProductVariant = (productId, variantId) => ({
+    type: 'CHANGE_PRODUCT_VARIANT',
+    productId,
+    variantId,
+});
