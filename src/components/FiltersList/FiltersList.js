@@ -1,5 +1,5 @@
 import React from 'react';
-import Dropdown from './Dropdown';
+import Dropdown from '../Dropdown/Dropdown';
 import PropTypes from 'prop-types';
 
 import './FiltersList.scss';

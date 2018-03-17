@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './ProductsList.scss';
-import Product, {ProductPropTypes} from './Product';
+import Product, {ProductPropTypes} from './Product/Product';
 
 const ProductsList = ({products, onProductVariantClick}) => {
     return (

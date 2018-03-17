@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DropdownOption from './DropdownOption';
+import DropdownOption from './DropdownOption/DropdownOption';
 import PropTypes from 'prop-types';
 
 import './Dropdown.scss';

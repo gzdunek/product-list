@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import Products from '../components/ProductsList';
+import Products from '../components/ProductsList/ProductsList';
 import {getFilteredProducts} from '../reducers';
 import {withRouter} from 'react-router';
 

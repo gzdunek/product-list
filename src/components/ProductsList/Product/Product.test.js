@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import {configure} from 'enzyme/build/index';
 import Adapter from 'enzyme-adapter-react-16/build/index';
 import Product from './Product';
-import ProductVariants from './ProductVariants';
+import ProductVariants from './ProductsVariants/ProductVariants';
 
 const setup = () => {
     const product = {

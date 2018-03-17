@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import {configure} from 'enzyme/build/index';
 import Adapter from 'enzyme-adapter-react-16/build/index';
 import FiltersList from './FiltersList';
-import Dropdown from './Dropdown';
+import Dropdown from '../Dropdown/Dropdown';
 
 const setup = () => {
     const filters = [

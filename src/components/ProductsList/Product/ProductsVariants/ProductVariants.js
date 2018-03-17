@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Product.scss';
+import '../Product.scss';
 
 const ProductVariants = ({variants, displayedVariantId, onVariantClick}) => (
     <div className="product__variants-list">

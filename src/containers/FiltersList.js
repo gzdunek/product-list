@@ -4,7 +4,7 @@ import qs from 'query-string';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
 import {changeFilterOpen} from '../actions';
-import FiltersListComponent from '../components/FiltersList';
+import FiltersListComponent from '../components/FiltersList/FiltersList';
 
 const mapStateToProps = (state) => ({
     filters: state.filters,

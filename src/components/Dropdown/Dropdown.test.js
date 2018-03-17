@@ -4,7 +4,7 @@ import {configure} from 'enzyme/build/index';
 import Adapter from 'enzyme-adapter-react-16/build/index';
 import sinon from 'sinon';
 import Dropdown from './Dropdown';
-import DropdownOption from './DropdownOption';
+import DropdownOption from './DropdownOption/DropdownOption';
 
 const setup = (props) => {
     const dropdownData = {
