@@ -3,7 +3,7 @@
 .dropdown {
   $title-padding: 12px;
   $mobile-option-margin: 25px;
-  $desktop-option-margin: 10px;
+  $desktop-option-margin: 20px;
 
   border: $border-gray;
   cursor: pointer;
@@ -25,10 +25,46 @@
   }
 
   &__option {
-    margin: $mobile-option-margin 0;
+    margin: $mobile-option-margin;
 
     @media screen and (min-width: 768px) {
-      margin: $desktop-option-margin 0;
+      margin: $desktop-option-margin;
+    }
+  }
+
+  &__option-checkbox {
+    position: absolute;
+    opacity: 0;
+
+    & + label {
+      position: relative;
+      cursor: pointer;
+      display: inline-flex;
+      padding: 0;
+    }
+
+    & + label:before {
+      content: '';
+      margin-right: 1em;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 1em;
+      height: 1em;
+      background: white;
+      border: $border-gray;
+    }
+
+    &:hover + label:before {
+      border: $border-black;
+    }
+
+    &:checked + label:before {
+      background: $primary-pink;
+    }
+
+    &:disabled + label:before {
+      box-shadow: none;
+      background: $light-gray;
     }
   }
 
@@ -40,11 +76,6 @@
     min-width: 100%;
     border: $border-gray;
     z-index: 1;
-
-    @media screen and (min-width: 768px) {
-      width: auto;
-      padding: ($mobile-option-margin - $title-padding) $title-padding;
-    }
 
     &--opened {
       border: $border-black;

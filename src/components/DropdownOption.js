@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const DropdownOption = ({option, isChecked, onOptionClick}) => (
     <div className="dropdown__option">
         <input type="checkbox"
+               className="dropdown__option-checkbox"
                checked={isChecked}
                onChange={(event) => onOptionClick(event.target.checked)}
                id={option.name}

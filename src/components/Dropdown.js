@@ -9,8 +9,9 @@ class Dropdown extends Component {
     toggleOptionsVisibility = () => {
         this.setState(
             (prevState => ({isOpen: !prevState.isOpen})),
-            () => this.props.onChangeOptionsVisibility(this.props.name, this.state.isOpen));
+            () => this.props.onChangeFilterOptionsVisibility(this.props.name, this.state.isOpen));
     };
+
     onOptionClick = (optionName, isChecked) => {
         this.setState(
             (prevState => {
@@ -73,6 +74,6 @@ Dropdown.propTypes = {
         name: PropTypes.string.isRequired,
     })).isRequired,
     selectedOptions: PropTypes.array,
-    onChangeOptionsVisibility: PropTypes.func.isRequired,
+    onChangeFilterOptionsVisibility: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
@@ -9,6 +8,8 @@ import filteredProducts from './reducers';
 import {FakeProducts} from './api/fakeProducts';
 import {ConnectedRouter, routerMiddleware, routerReducer} from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
+
+import './index.scss';
 
 const history = createHistory();
 const middleware = routerMiddleware(history);

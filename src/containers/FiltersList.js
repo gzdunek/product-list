@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onChangeOptionsVisibility: (filterName, isOpen) => {
+    onChangeFilterOptionsVisibility: (filterName, isOpen) => {
         dispatch(changeFilterOpen(filterName, isOpen));
     },
     dispatch

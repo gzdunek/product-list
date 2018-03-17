@@ -18,22 +18,50 @@
     padding: 0;
   }
 
+  &__price {
+    float: right;
+  }
+
   &__description {
     font-weight: 300;
     color: $strong-dark-gray;
   }
 
-  &__buy-button {
-    width: 100%;
-    padding: 1em;
-    border: $border-gray;
-    color: black;
-    cursor: pointer;
-    background: white;
+  &__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: $default-elements-gap;
   }
 
-  &__buy-button:hover {
-    border: $border-black;
+  &__button {
+    width: 100%;
+    padding: 0.5em;
+    cursor: pointer;
+
+    &__text {
+      margin: 0.5em;
+      font-weight: 400;
+    }
+
+    &--primary {
+      border: initial;
+      color: white;
+      background: $primary-pink;
+    }
+
+    &--primary:hover {
+      background: $light-primary-pink;
+    }
+
+    &--secondary {
+      border: $border-gray;
+      color: black;
+      background: white;
+    }
+
+    &--secondary:hover {
+      border: $border-black;
+    }
   }
 
   &__variants-list {
@@ -48,11 +76,12 @@
     box-sizing: border-box;
     width: $variant-size;
     height: $variant-size;
-    margin: 0 ($variant-size / 2) 0 0;
+    margin: 0 ($variant-size / 2);
     cursor: pointer;
+    opacity: 0.35;
 
     &--selected {
-      border: $border-gray;
+      opacity: 0.7;
     }
 
     &:hover {
@@ -60,8 +89,4 @@
     }
   }
 
-  &__variant-part {
-    height: 50%;
-    background: $light-gray;
-  }
 }

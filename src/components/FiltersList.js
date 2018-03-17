@@ -7,12 +7,11 @@ import './FiltersList.scss';
 const FiltersList = (props) => (
     <div>
         {props.filters.map(filter =>
-            <div className="filters__item">
-                <Dropdown key={filter.name}
-                          {...filter}
+            <div key={filter.name} className="filters__item">
+                <Dropdown {...filter}
                           selectedOptions={props.allFiltersSelectedOptions[filter.name]}
                           onChange={selectedOptions => props.onFilterChange(filter.name, selectedOptions)}
-                          onChangeOptionsVisibility={props.onChangeOptionsVisibility}
+                          onChangeFilterOptionsVisibility={props.onChangeFilterOptionsVisibility}
                 />
             </div>)}
     </div>
@@ -30,5 +29,5 @@ FiltersList.propTypes = {
     })),
     allFiltersSelectedOptions: PropTypes.object,
     onFilterChange: PropTypes.func.isRequired,
-    onChangeOptionsVisibility: PropTypes.func.isRequired,
+    onChangeFilterOptionsVisibility: PropTypes.func.isRequired,
 };
