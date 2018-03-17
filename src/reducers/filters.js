@@ -1,6 +1,6 @@
 const filters = (state = [], action) => {
     switch (action.type) {
-        case 'CHANGE_FILTER_VISIBILITY':
+        case 'CHANGE_FILTER_OPEN':
             const newState = [...state];
             newState.forEach(filter => {
                 filter.isOpen = false;

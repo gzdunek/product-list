@@ -1,61 +1,67 @@
+@import "../variables";
+
 .product {
-  padding: 10px;
-  border-radius: 10px;
   position: relative;
-  font-family: 'Oswald', sans-serif;
-  width: 100%;
   height: 100%;
-  border: 0;
-  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
-  background: white;
-  text-align: center;
 
   &__image {
-    width: auto;
-    height: 200px;
+    $product-image-vertical-padding: 40px;
+
+    width: 100%;
+    padding: $product-image-vertical-padding 0;
+    background: $very-light-gray;
   }
 
   &__title {
-    font-family: 'Oswald', sans-serif;
     font-weight: 700;
-    margin: 0;
+    margin: 1em 0 0 0;
     padding: 0;
   }
 
   &__description {
-    font-family: 'Oswald', sans-serif;
     font-weight: 300;
+    color: $strong-dark-gray;
   }
 
-  &__buy__button {
-    background: hsl(0, 0%, 97%);
+  &__buy-button {
     width: 100%;
-    height: 40px;
-    position: absolute;
-    bottom: 0;
-    left: 10px;
-    margin-left: -10px;
-    border-radius: 0 0 10px 10px;
-    border: 0;
-    color: darkgray;
-    cursor: pointer;
-  }
-
-  &__buy__button:hover {
-    background: orange;
+    padding: 1em;
+    border: $border-gray;
     color: black;
+    cursor: pointer;
+    background: white;
   }
 
-  &__variants__list {
+  &__buy-button:hover {
+    border: $border-black;
+  }
+
+  &__variants-list {
     display: flex;
     justify-content: center;
-    height: 50px;
+    margin-bottom: 1em;
   }
 
   &__variant {
-    width: 20px;
-    height: 20px;
-    margin: 0 10px 0 0;
+    $variant-size: 20px;
+
+    box-sizing: border-box;
+    width: $variant-size;
+    height: $variant-size;
+    margin: 0 ($variant-size / 2) 0 0;
     cursor: pointer;
+
+    &--selected {
+      border: $border-gray;
+    }
+
+    &:hover {
+      border: $border-black;
+    }
+  }
+
+  &__variant-part {
+    height: 50%;
+    background: $light-gray;
   }
 }

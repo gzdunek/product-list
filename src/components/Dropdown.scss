@@ -1,25 +1,61 @@
+@import "../variables";
+
 .dropdown {
-  position: relative;
-  display: inline-block;
-  border: 0;
-  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
-  border-radius: 10px;
-  font-family: 'Oswald', sans-serif;
-  background: white;
+  $title-padding: 12px;
+  $mobile-option-margin: 25px;
+  $desktop-option-margin: 10px;
+
+  border: $border-gray;
   cursor: pointer;
-  margin: 0 0 10px 0;
+  width: 100%;
 
   &__title {
-    margin: 5px;
+    margin: 0;
+    padding: $title-padding;
+  }
+
+  &__title-icon {
+    position: absolute;
+    right: $title-padding;
+
+    @media screen and (min-width: 768px) {
+      margin-left: $title-padding;
+      position: initial;
+    }
+  }
+
+  &__option {
+    margin: $mobile-option-margin 0;
+
+    @media screen and (min-width: 768px) {
+      margin: $desktop-option-margin 0;
+    }
   }
 
   &__options {
     display: block;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    padding: 12px 16px;
+    left: 0;
+    background-color: white;
+    min-width: 100%;
+    border: $border-gray;
     z-index: 1;
+
+    @media screen and (min-width: 768px) {
+      width: auto;
+      padding: ($mobile-option-margin - $title-padding) $title-padding;
+    }
+
+    &--opened {
+      border: $border-black;
+    }
+  }
+
+  &:hover {
+    border: $border-black;
+  }
+
+  &--opened {
+    border: $border-black;
   }
 }

@@ -11,11 +11,12 @@ const Product = ({id: productId, productName, description, variants, displayedVa
     return (
         <div className="product">
             <img className="product__image" src={getVariant(displayedVariantId).imageUrl} alt={productName}/>
-            <h2 className="product__title">{productName}</h2>
+            <h3 className="product__title">{productName}</h3>
             <p className="product__description">{description}</p>
             <ProductVariants variants={variants}
+                             displayedVariantId={displayedVariantId}
                              onVariantClick={(variantId) => onProductVariantClick(productId, variantId)}/>
-            <button className="product__buy__button">{getVariant(displayedVariantId).price} | Buy</button>
+            <button className="product__buy-button">{getVariant(displayedVariantId).price} | Buy</button>
         </div>
     );
 };

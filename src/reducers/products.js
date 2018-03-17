@@ -20,7 +20,7 @@ export const getFilteredProducts = (products, filters) => {
     let filteredProducts = [...products];
 
     for (const filter in filters) {
-        if (!filters[filter].length) {
+        if (!filters[filter] || !filters[filter].length) {
             continue;
         }
 

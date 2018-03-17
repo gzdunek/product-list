@@ -1,3 +1,8 @@
+@import "../variables";
+
 .container {
-  margin: 0 20px 0 20px;
+  margin: ($mobile-container-margin + $header-height) $mobile-container-margin $mobile-container-margin $mobile-container-margin;
+  @media screen and (min-width: 768px) {
+    margin: ($default-elements-gap + $header-height) $desktop-container-margin $desktop-container-margin $desktop-container-margin;
+  }
 }

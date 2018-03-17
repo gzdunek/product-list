@@ -5,14 +5,16 @@ import PropTypes from 'prop-types';
 import './FiltersList.scss';
 
 const FiltersList = (props) => (
-    <div className="filters">
+    <div>
         {props.filters.map(filter =>
-            <Dropdown key={filter.name}
-                      {...filter}
-                      selectedOptions={props.allFiltersSelectedOptions[filter.name]}
-                      onChange={selectedOptions => props.onFilterChange(filter.name, selectedOptions)}
-                      onChangeOptionsVisibility={props.onChangeOptionsVisibility}
-            />)}
+            <div className="filters__item">
+                <Dropdown key={filter.name}
+                          {...filter}
+                          selectedOptions={props.allFiltersSelectedOptions[filter.name]}
+                          onChange={selectedOptions => props.onFilterChange(filter.name, selectedOptions)}
+                          onChangeOptionsVisibility={props.onChangeOptionsVisibility}
+                />
+            </div>)}
     </div>
 );
 

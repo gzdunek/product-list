@@ -1,5 +1,18 @@
+@import "../variables";
+
 .filters {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 100px);
-  grid-gap: 10px;
+
+  &__item {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: $default-elements-gap;
+
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+      width: auto;
+      margin-right: $default-elements-gap;
+    }
+
+  }
 }

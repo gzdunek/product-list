@@ -2,9 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const DropdownOption = ({option, isChecked, onOptionClick}) => (
-    <div>
-        <input type="checkbox" checked={isChecked} onChange={(event) => onOptionClick(event.target.checked)}/>
-        <span>{option.name}</span>
+    <div className="dropdown__option">
+        <input type="checkbox"
+               checked={isChecked}
+               onChange={(event) => onOptionClick(event.target.checked)}
+               id={option.name}
+        />
+        <label htmlFor={option.name}> {option.name}</label>
     </div>
 );
 

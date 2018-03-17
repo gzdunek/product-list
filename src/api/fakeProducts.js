@@ -41,6 +41,24 @@ export const FakeProducts = {
                 },
 
             ]
+        },
+        {
+            id: 3,
+            productName: 'Plecak 3X',
+            category: 'backpack',
+            description: 'Zwykły plecak 3',
+            colors: ['blue'],
+            displayedVariantId: 4,
+            variants: [
+                {
+                    id: 4,
+                    color: 'blue',
+                    imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/001/468/plp/Domino-Aviator-PLP2.png?1506357649',
+                    price: '250 PLN',
+                    inStock: true
+                },
+
+            ]
         }
     ]
 };

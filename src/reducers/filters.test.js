@@ -1,12 +1,12 @@
 import filters from './filters';
-import {changeFilterVisibility} from '../actions';
+import {changeFilterOpen} from '../actions';
 
 describe('Filters reducer', () => {
     it('should return initial state, empty', () => {
         expect(filters(undefined, {})).toEqual([]);
     });
 
-    it('should handle CHANGE_FILTER_VISIBILITY', () => {
+    it('should handle CHANGE_FILTER_OPEN', () => {
         expect(filters([
             {
                 displayedName: 'Category',
@@ -34,7 +34,7 @@ describe('Filters reducer', () => {
                     }
                 ]
             }
-        ], changeFilterVisibility('category', true))).toEqual([
+        ], changeFilterOpen('category', true))).toEqual([
             {
                 displayedName: 'Category',
                 name: 'category',

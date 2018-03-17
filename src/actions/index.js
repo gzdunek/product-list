@@ -1,5 +1,5 @@
-export const changeFilterVisibility = (filterName, isOpen) => ({
-    type: 'CHANGE_FILTER_VISIBILITY',
+export const changeFilterOpen = (filterName, isOpen) => ({
+    type: 'CHANGE_FILTER_OPEN',
     filterName,
     isOpen
 });

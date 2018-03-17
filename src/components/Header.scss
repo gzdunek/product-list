@@ -1,0 +1,28 @@
+@import "../variables";
+
+.header {
+  height: $header-height;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  top: 0;
+  background: white;
+  z-index: 100;
+  border-bottom: $border-gray;
+
+  &__logo {
+    color: $dark-gray;
+    display: inline;
+    margin-right: $default-elements-gap;
+    margin-left: $mobile-container-margin;
+
+    @media screen and (min-width: 768px) {
+      margin-left: $desktop-container-margin;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    display: inline;
+  }
+}

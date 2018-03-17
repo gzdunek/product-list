@@ -9,10 +9,12 @@ import {Route} from 'react-router';
 class App extends Component {
     render() {
         return (
-            <div className="container">
+            <div>
                 <Header/>
-                <Filters/>
-                <Route path="/" component={FilteredProducts}/>
+                <div className="container">
+                    <Filters/>
+                    <Route path="/" component={FilteredProducts}/>
+                </div>
             </div>
         );
     }

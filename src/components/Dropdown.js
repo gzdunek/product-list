@@ -44,10 +44,13 @@ class Dropdown extends Component {
 
     render() {
         return (
-            <div className="dropdown">
-                <h2 className="dropdown__title"
-                    onClick={() => this.toggleOptionsVisibility()}>{this.props.displayedName}</h2>
-                {this.state.isOpen && <div className="dropdown__options">
+            <div className={'dropdown ' + (this.state.isOpen && 'dropdown--opened')}>
+                <p className="dropdown__title"
+                   onClick={() => this.toggleOptionsVisibility()}>
+                    {this.props.displayedName}
+                    <i className="fas fa-arrow-down dropdown__title-icon"/>
+                </p>
+                {this.state.isOpen && <div className="dropdown__options dropdown__options--opened">
                     {this.props.options.map(option =>
                         <DropdownOption
                             key={option.name}

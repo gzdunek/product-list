@@ -3,7 +3,7 @@ import {push} from 'react-router-redux';
 import qs from 'query-string';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
-import {changeFilterVisibility} from '../actions';
+import {changeFilterOpen} from '../actions';
 import FiltersListComponent from '../components/FiltersList';
 
 const mapStateToProps = (state) => ({
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
     onChangeOptionsVisibility: (filterName, isOpen) => {
-        dispatch(changeFilterVisibility(filterName, isOpen));
+        dispatch(changeFilterOpen(filterName, isOpen));
     },
     dispatch
 });
