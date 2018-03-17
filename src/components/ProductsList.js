@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './ProductsList.scss';
 import Product, {ProductPropTypes} from './Product';
 
-const Products = ({products, onProductVariantClick}) => {
+const ProductsList = ({products, onProductVariantClick}) => {
     return (
         <div className="products">
             {products.map(product => (
@@ -14,9 +14,9 @@ const Products = ({products, onProductVariantClick}) => {
     );
 };
 
-export default Products;
+export default ProductsList;
 
-Products.propTypes = {
+ProductsList.propTypes = {
     products: PropTypes.arrayOf(PropTypes.shape({
         ...ProductPropTypes
     })).isRequired,

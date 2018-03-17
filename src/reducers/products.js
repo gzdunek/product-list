@@ -1,6 +1,8 @@
+import * as types from '../constants/actions';
+
 const products = (state = [], action) => {
     switch (action.type) {
-        case 'CHANGE_PRODUCT_VARIANT':
+        case types.CHANGE_PRODUCT_VARIANT:
             const newState = [...state];
             const index = newState.findIndex(product => product.id === action.productId);
             newState[index].displayedVariantId = action.variantId;

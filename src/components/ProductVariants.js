@@ -5,7 +5,7 @@ import './Product.scss';
 
 const ProductVariants = ({variants, displayedVariantId, onVariantClick}) => (
     <div className="product__variants-list">
-        {variants.map(variant => (
+        {variants && variants.map(variant => (
             <div className={'product__variant ' + (variant.id === displayedVariantId && 'product__variant--selected')}
                  style={{backgroundColor: variant.color}}
                  key={variant.id}
@@ -23,8 +23,7 @@ export const ProductVariantsPropTypes = {
         color: PropTypes.string.isRequired,
         imageUrl: PropTypes.string.isRequired,
         price: PropTypes.string.isRequired,
-        inStock: PropTypes.bool.isRequired,
-    })),
+    })).isRequired,
 };
 
 ProductVariants.propTypes = {

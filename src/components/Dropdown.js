@@ -9,8 +9,16 @@ class Dropdown extends Component {
     toggleOptionsVisibility = () => {
         this.setState(
             (prevState => ({isOpen: !prevState.isOpen})),
-            () => this.props.onChangeFilterOptionsVisibility(this.props.name, this.state.isOpen));
+            () => this.props.onChangeDropdownOptionsVisibility(this.props.name, this.state.isOpen));
     };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen: !!props.isOpen,
+            selectedOptions: props.selectedOptions || [],
+        };
+    }
 
     onOptionClick = (optionName, isChecked) => {
         this.setState(
@@ -29,14 +37,6 @@ class Dropdown extends Component {
             () => this.props.onChange(this.state.selectedOptions));
     };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isOpen: false,
-            selectedOptions: props.selectedOptions || [],
-        };
-    }
-
     componentWillReceiveProps(nextProps) {
         if (this.state.isOpen !== nextProps.isOpen) {
             this.setState(() => ({isOpen: nextProps.isOpen}));
@@ -52,7 +52,7 @@ class Dropdown extends Component {
                     <i className="fas fa-arrow-down dropdown__title-icon"/>
                 </p>
                 {this.state.isOpen && <div className="dropdown__options dropdown__options--opened">
-                    {this.props.options.map(option =>
+                    {this.props.options && this.props.options.map(option =>
                         <DropdownOption
                             key={option.name}
                             option={option}
@@ -69,11 +69,13 @@ class Dropdown extends Component {
 export default Dropdown;
 
 Dropdown.propTypes = {
+    isOpen: PropTypes.bool,
+    name: PropTypes.string.isRequired,
     displayedName: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.isRequired,
     })).isRequired,
     selectedOptions: PropTypes.array,
-    onChangeFilterOptionsVisibility: PropTypes.func.isRequired,
+    onChangeDropdownOptionsVisibility: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
 };

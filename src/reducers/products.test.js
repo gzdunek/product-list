@@ -1,5 +1,6 @@
 import products, {getFilteredProducts} from './products';
 import {changeProductVariant} from '../actions';
+import * as types from '../constants/actions';
 
 const allProducts = [
     {
@@ -15,14 +16,12 @@ const allProducts = [
                 color: 'red',
                 imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/000/955/plp/Bebop-Weekender-Front-PDP-v2.png?1498578054',
                 price: '115 PLN',
-                inStock: true
             },
             {
                 id: 2,
                 color: 'blue',
                 imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/000/957/plp/Jetty-Weekender-Front-PDP-v2.png?1498578100',
                 price: '125 PLN',
-                inStock: true
             }
         ]
     },
@@ -39,7 +38,6 @@ const allProducts = [
                 color: 'blue',
                 imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/001/468/plp/Domino-Aviator-PLP2.png?1506357649',
                 price: '250 PLN',
-                inStock: true
             },
 
         ]
@@ -101,7 +99,7 @@ describe('Products reducer', () => {
         expect(products(undefined, {})).toEqual([]);
     });
 
-    it('should handle CHANGE_PRODUCT_VARIANT', () => {
+    it(`should handle ${types.CHANGE_PRODUCT_VARIANT}`, () => {
         expect(products(allProducts, changeProductVariant(1, 2))).toEqual(
             [
                 {

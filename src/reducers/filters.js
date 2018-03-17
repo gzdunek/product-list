@@ -1,6 +1,8 @@
+import * as types from '../constants/actions';
+
 const filters = (state = [], action) => {
     switch (action.type) {
-        case 'CHANGE_FILTER_OPEN':
+        case types.CHANGE_FILTER_OPEN:
             const newState = [...state];
             newState.forEach(filter => {
                 filter.isOpen = false;
