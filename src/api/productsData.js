@@ -105,7 +105,7 @@ const productsData = [
         id: 4,
         productName: 'Aviator Backpack',
         category: 'backpack',
-        description: 'Streamlined shape and unbeatable storage',
+        description: 'Streamlined shape',
         colorsIds: [1, 2, 3, 5],
         displayedVariantId: 1,
         variants: [
@@ -139,7 +139,7 @@ const productsData = [
         id: 5,
         productName: 'Motorist 3-in-1 Backpack',
         category: 'backpack',
-        description: 'Backpack, shoulder bag, top handle bag',
+        description: 'Backpack, shoulder bag',
         colorsIds: [1, 2, 4, 5],
         displayedVariantId: 1,
         variants: [
