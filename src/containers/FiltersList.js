@@ -19,11 +19,11 @@ const mapDispatchToProps = dispatch => ({
 
 const FiltersList = (props) => {
     const allActiveFilters = qs.parse(props.location.search, {arrayFormat: 'bracket'});
-
     const handleFiltersChange = (filterName, selectedOptions) => {
         allActiveFilters[filterName] = selectedOptions;
         const filterString = qs.stringify(allActiveFilters, {arrayFormat: 'bracket'});
 
+        //updates current URL
         props.dispatch(push({
             search: filterString
         }));

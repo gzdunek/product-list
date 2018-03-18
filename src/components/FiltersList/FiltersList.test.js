@@ -13,10 +13,12 @@ const setup = () => {
             isOpen: false,
             options: [
                 {
-                    name: 'bag',
+                    name: 'Bag',
+                    value: 'bag',
                 },
                 {
-                    name: 'backpack',
+                    name: 'Backpack',
+                    value: 'backpack',
                 }
             ]
         },
@@ -26,10 +28,12 @@ const setup = () => {
             isOpen: false,
             options: [
                 {
-                    name: 'red',
+                    name: 'Red',
+                    value: 'red',
                 },
                 {
-                    name: 'blue',
+                    name: 'Blue',
+                    value: 'blue',
                 }
             ]
         }
@@ -50,7 +54,7 @@ describe('FilterList Component', () => {
         expect(wrapper.exists()).toBe(true);
     });
 
-    it('should render two Dropdown Components', function () {
+    it('should render two Dropdown Components', () => {
         const wrapper = setup();
         expect(wrapper.find('div').children(Dropdown).length).toBe(2);
     });

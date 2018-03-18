@@ -12,23 +12,15 @@ class Dropdown extends Component {
             () => this.props.onChangeDropdownOptionsVisibility(this.props.name, this.state.isOpen));
     };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isOpen: !!props.isOpen,
-            selectedOptions: props.selectedOptions || [],
-        };
-    }
-
-    onOptionClick = (optionName, isChecked) => {
+    onOptionClick = (optionValue, isChecked) => {
         this.setState(
             (prevState => {
                 if (isChecked) {
                     return ({
-                        selectedOptions: [...prevState.selectedOptions, optionName]
+                        selectedOptions: [...prevState.selectedOptions, optionValue]
                     });
                 } else {
-                    const index = prevState.selectedOptions.indexOf(optionName);
+                    const index = prevState.selectedOptions.indexOf(optionValue);
                     return ({
                         selectedOptions: prevState.selectedOptions.filter((option, i) => i !== index)
                     });
@@ -36,6 +28,14 @@ class Dropdown extends Component {
             }),
             () => this.props.onChange(this.state.selectedOptions));
     };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen: !!props.isOpen,
+            selectedOptions: (props.selectedOptions && props.selectedOptions.map(option => option.toString())) || [],
+        };
+    }
 
     componentWillReceiveProps(nextProps) {
         if (this.state.isOpen !== nextProps.isOpen) {
@@ -54,10 +54,10 @@ class Dropdown extends Component {
                 {this.state.isOpen && <div className="dropdown__options dropdown__options--opened">
                     {this.props.options && this.props.options.map(option =>
                         <DropdownOption
-                            key={option.name}
+                            key={option.value}
                             option={option}
-                            isChecked={this.state.selectedOptions.indexOf(option.name) >= 0}
-                            onOptionClick={(isChecked) => this.onOptionClick(option.name, isChecked)}
+                            isChecked={this.state.selectedOptions.indexOf(option.value.toString()) >= 0}
+                            onOptionClick={(isChecked) => this.onOptionClick(option.value.toString(), isChecked)}
                         />
                     )}
                 </div>}
@@ -70,10 +70,14 @@ export default Dropdown;
 
 Dropdown.propTypes = {
     isOpen: PropTypes.bool,
-    name: PropTypes.string.isRequired,
     displayedName: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.isRequired,
+        value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]).isRequired,
     })).isRequired,
     selectedOptions: PropTypes.array,
     onChangeDropdownOptionsVisibility: PropTypes.func.isRequired,

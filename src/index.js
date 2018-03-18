@@ -5,45 +5,17 @@ import registerServiceWorker from './registerServiceWorker';
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import {Provider} from 'react-redux';
 import filteredProducts from './reducers';
-import {FakeProducts} from './api/fakeProducts';
 import {ConnectedRouter, routerMiddleware, routerReducer} from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 
 import './index.scss';
+import productsData from './api/productsData';
+import filtersData from './api/filtersData';
 
 const history = createHistory();
 const middleware = routerMiddleware(history);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const filters = [
-    {
-        displayedName: 'Category',
-        name: 'category',
-        isOpen: false,
-        options: [
-            {
-                name: 'bag',
-            },
-            {
-                name: 'backpack',
-            }
-        ]
-    },
-    {
-        displayedName: 'Color',
-        name: 'colors',
-        isOpen: false,
-        options: [
-            {
-                name: 'red',
-            },
-            {
-                name: 'blue',
-            }
-        ]
-    }
-];
 
 const store = createStore(
     combineReducers({
@@ -51,8 +23,8 @@ const store = createStore(
         router: routerReducer
     }),
     {
-        ...FakeProducts,
-        filters
+        products: productsData,
+        filters: filtersData
     },
     composeEnhancers(
         applyMiddleware(

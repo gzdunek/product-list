@@ -9,7 +9,7 @@ const setup = () => {
     return shallow(<App/>);
 };
 
-describe('App Compnent', () => {
+describe('App Component', () => {
     it('should render', () => {
         const wrapper = setup();
         expect(wrapper.exists()).toBe(true);

@@ -9,17 +9,18 @@ const setup = () => {
     const variants = [
         {
             id: 1,
-            color: 'red',
+            colorId: 3,
             imageUrl: 'x',
             price: '115 PLN',
         },
         {
             id: 2,
-            color: 'blue',
+            colorId: 4,
             imageUrl: 'y',
             price: '125 PLN',
         }
     ];
+
     const onProductVariantClickStub = sinon.spy();
 
     configure({adapter: new Adapter()});

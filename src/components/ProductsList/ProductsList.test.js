@@ -12,18 +12,18 @@ const setup = () => {
             productName: 'Week(ender)',
             category: 'bag',
             description: 'Zwykła torba',
-            colors: ['red', 'blue'],
+            colorsIds: [1, 2],
             displayedVariantId: 1,
             variants: [
                 {
                     id: 1,
-                    color: 'red',
+                    colorId: 2,
                     imageUrl: 'x',
                     price: '115 PLN',
                 },
                 {
                     id: 2,
-                    color: 'blue',
+                    colorId: 3,
                     imageUrl: 'y',
                     price: '125 PLN',
                 }
@@ -34,12 +34,12 @@ const setup = () => {
             productName: 'Plecak 2X',
             category: 'backpack',
             description: 'Zwykły plecak',
-            colors: ['blue'],
+            colorsIds: [1, 2],
             displayedVariantId: 3,
             variants: [
                 {
                     id: 3,
-                    color: 'blue',
+                    colorId: 3,
                     imageUrl: 'z',
                     price: '250 PLN',
                 },

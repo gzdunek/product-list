@@ -7,9 +7,9 @@ const DropdownOption = ({option, isChecked, onOptionClick}) => (
                className="dropdown__option-checkbox"
                checked={isChecked}
                onChange={(event) => onOptionClick(event.target.checked)}
-               id={option.name}
+               id={option.value}
         />
-        <label htmlFor={option.name}> {option.name}</label>
+        <label htmlFor={option.value}> {option.value && option.name}</label>
     </div>
 );
 

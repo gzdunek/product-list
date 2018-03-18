@@ -6,21 +6,21 @@ const allProducts = [
     {
         id: 1,
         productName: 'Torba 1X',
-        colors: ['red', 'blue'],
+        colorsIds: [1, 2],
         categories: 'bags',
         description: 'Zwykła torba',
         displayedVariantId: 1,
         variants: [
             {
                 id: 1,
-                color: 'red',
-                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/000/955/plp/Bebop-Weekender-Front-PDP-v2.png?1498578054',
+                colorId: 1,
+                imageUrl: 'http:xy.com',
                 price: '115 PLN',
             },
             {
                 id: 2,
-                color: 'blue',
-                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/000/957/plp/Jetty-Weekender-Front-PDP-v2.png?1498578100',
+                color: 2,
+                imageUrl: 'http:xy.com',
                 price: '125 PLN',
             }
         ]
@@ -28,15 +28,15 @@ const allProducts = [
     {
         id: 2,
         productName: 'Plecak 2X',
-        colors: ['red'],
+        colorsIds: [1],
         categories: 'backpack',
         description: 'Zwykły plecak',
         displayedVariantId: 2,
         variants: [
             {
-                id: 3,
-                color: 'blue',
-                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/001/468/plp/Domino-Aviator-PLP2.png?1506357649',
+                id: 2,
+                colorId: 1,
+                imageUrl: 'http:xy.com',
                 price: '250 PLN',
             },
 
@@ -86,7 +86,7 @@ describe('Products selector', () => {
     it('should return one element (combined filter, multivalue parameter filtered', () => {
         const filters = {
             categories: ['bags', 'backpack'],
-            colors: ['blue'],
+            colorsIds: [2],
         };
 
         expect(getFilteredProducts(allProducts, filters)).toEqual([allProducts[0]]);

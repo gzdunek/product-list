@@ -1,4 +1,4 @@
-@import "../../variables";
+@import "../variables";
 
 .dropdown {
   $title-padding: 12px;
@@ -25,6 +25,7 @@
   }
 
   &__option {
+    width: 100%;
     margin: $mobile-option-margin;
 
     @media screen and (min-width: 768px) {
@@ -41,6 +42,7 @@
       cursor: pointer;
       display: inline-flex;
       padding: 0;
+      white-space: nowrap;
     }
 
     & + label:before {

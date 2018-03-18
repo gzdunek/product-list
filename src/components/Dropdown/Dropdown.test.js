@@ -12,10 +12,12 @@ const setup = (props) => {
         displayedName: 'Category',
         options: [
             {
-                name: 'bag',
+                name: 'Bag',
+                value: 'bag',
             },
             {
-                name: 'backpack',
+                name: 'Backpack',
+                value: 'backpack',
             }
         ]
     };

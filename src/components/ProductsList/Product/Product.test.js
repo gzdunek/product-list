@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import {configure} from 'enzyme/build/index';
 import Adapter from 'enzyme-adapter-react-16/build/index';
 import Product from './Product';
-import ProductVariants from './ProductsVariants/ProductVariants';
+import ProductVariants from './ProductVariants/ProductVariants';
 
 const setup = () => {
     const product = {
@@ -16,13 +16,13 @@ const setup = () => {
         variants: [
             {
                 id: 1,
-                color: 'red',
+                colorId: 1,
                 imageUrl: 'x',
                 price: '115 PLN',
             },
             {
                 id: 2,
-                color: 'blue',
+                colorId: 2,
                 imageUrl: 'y',
                 price: '125 PLN',
             }

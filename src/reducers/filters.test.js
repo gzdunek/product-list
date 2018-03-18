@@ -13,54 +13,26 @@ describe('Filters reducer', () => {
                 displayedName: 'Category',
                 name: 'category',
                 isOpen: false,
-                options: [
-                    {
-                        name: 'bag',
-                    },
-                    {
-                        name: 'backpack',
-                    }
-                ]
+                options: []
             },
             {
                 displayedName: 'Color',
                 name: 'colors',
                 isOpen: false,
-                options: [
-                    {
-                        name: 'red',
-                    },
-                    {
-                        name: 'blue',
-                    }
-                ]
+                options: []
             }
         ], changeFilterOpen('category', true))).toEqual([
             {
                 displayedName: 'Category',
                 name: 'category',
                 isOpen: true,
-                options: [
-                    {
-                        name: 'bag',
-                    },
-                    {
-                        name: 'backpack',
-                    }
-                ]
+                options: []
             },
             {
                 displayedName: 'Color',
                 name: 'colors',
                 isOpen: false,
-                options: [
-                    {
-                        name: 'red',
-                    },
-                    {
-                        name: 'blue',
-                    }
-                ]
+                options: []
             }
         ]);
     });

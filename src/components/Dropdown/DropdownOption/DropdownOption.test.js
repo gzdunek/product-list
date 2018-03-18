@@ -7,6 +7,7 @@ import DropdownOption from './DropdownOption';
 
 const setup = () => {
     const option = {
+        displayedName: 'Bag',
         name: 'bag',
     };
 
