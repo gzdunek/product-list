@@ -112,7 +112,7 @@ const productsData = [
             {
                 id: 1,
                 colorId: 1,
-                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/001/468/plp/Domino-Aviator-PLP2.png?1506357649',
+                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/001/226/plp/Domino-Lrg-Bpk-PLP.png?1499972266',
                 price: '$295',
             },
             {
@@ -146,7 +146,7 @@ const productsData = [
             {
                 id: 1,
                 colorId: 1,
-                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/001/463/plp/Domino-Motorist-PLP2.png?1506363858',
+                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/001/232/plp/Domino-Small-Bpk-PLP.png?1499972791',
                 price: '$295',
             },
             {
@@ -158,7 +158,7 @@ const productsData = [
             {
                 id: 3,
                 colorId: 4,
-                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/001/461/plp/Mallard-Motorist-PLP2.png?1506363839',
+                imageUrl: 'https://d3pomqg3gz7350.cloudfront.net/spree/images/attachments/000/001/234/plp/Mallard-Small-Bpk-PLP.png?1499972902',
                 price: '$255',
             },
             {
