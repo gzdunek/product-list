@@ -1,4 +1,4 @@
-# . Simple Product List Page
+# Simple Product List Page
 
 https://gzdunek.github.io/product-list/
 
