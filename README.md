@@ -1,4 +1,4 @@
-#Simple Product List Page
+# . Simple Product List Page
 
 https://gzdunek.github.io/product-list/
 
@@ -8,7 +8,7 @@ Built with:
 * Sass
 * Jest, Enzyme, Sinon
 
-###Running locally
+### Running locally
 Clone the repository and run the following commands.
 ```sh
 yarn install
